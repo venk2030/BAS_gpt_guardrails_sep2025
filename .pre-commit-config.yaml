@@ -1,0 +1,23 @@
+repos:
+- repo: local
+  hooks:
+  - id: no-diff-markers
+    name: Disallow pasted diff markers
+    language: system
+    pass_filenames: false
+    entry: >-
+      bash -c 'grep -R -nE "^(--- /dev/null|\+\+\+ b/|@@ )" . && { echo "Diff junk detected"; exit 1; } || exit 0'
+
+  - id: no-dep-creep
+    name: Disallow dependency drift (pyproject change needs approval)
+    language: system
+    pass_filenames: false
+    entry: >-
+      bash -c 'git diff --name-only --cached | grep -qx "pyproject.toml" && { echo "pyproject.toml changed - needs approval"; exit 1; } || exit 0'
+
+  - id: whitelist-only
+    name: Enforce writable whitelist (staged files must be listed)
+    language: system
+    pass_filenames: false
+    entry: >-
+      bash -c 'test -f guard-writable.txt || { echo "guard-writable.txt missing"; exit 1; }; git diff --name-only --cached | while read -r f; do [ -z "$f" ] && continue; grep -x -- "$f" guard-writable.txt >/dev/null || { echo "Forbidden staged: $f"; exit 1; }; done'

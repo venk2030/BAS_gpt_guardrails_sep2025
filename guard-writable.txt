@@ -1,0 +1,7 @@
+.github/workflows/guard.yml
+docs/CHAT_GUARDRAILS.md
+docs/project-charter.md
+docs/STATUS.md
+guard-writable.txt
+.pre-commit-config.yaml
+README.md

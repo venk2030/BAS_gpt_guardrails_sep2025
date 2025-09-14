@@ -1,0 +1,20 @@
+name: Guardrails
+on: [pull_request]
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Enforce writable whitelist
+        shell: bash
+        run: |
+          set -euo pipefail
+          WL="$GITHUB_WORKSPACE/guard-writable.txt"
+          [[ -f "$WL" ]] || { echo "guard-writable.txt missing"; exit 1; }
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          CHANGED="$(git diff --name-only "origin/${{ github.base_ref }}"...HEAD)"
+          echo "$CHANGED" | while read -r f; do
+            [[ -z "${f:-}" ]] && continue
+            grep -x -- "$f" "$WL" >/dev/null || { echo "Forbidden change: $f"; exit 2; }
+          done
