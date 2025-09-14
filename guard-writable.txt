@@ -6,3 +6,5 @@ guard-writable.txt
 .pre-commit-config.yaml
 README.md
 docs/EXTRA.md
+.github/CODEOWNERS
+.github/pull_request_template.md
