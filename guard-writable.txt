@@ -4,6 +4,7 @@
 .pre-commit-config.yaml
 docs/CHAT_GUARDRAILS.md
 docs/EXTRA.md
+docs/file-addition-in-test-branch.md
 docs/project-charter.md
 docs/STATUS.md
 file-addition-in-test-branch.md
