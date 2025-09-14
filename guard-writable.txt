@@ -6,6 +6,7 @@ docs/CHAT_GUARDRAILS.md
 docs/EXTRA.md
 docs/project-charter.md
 docs/STATUS.md
+file-addition-in-test-branch.md
 guard-writable.txt
 Makefile
 README.md
