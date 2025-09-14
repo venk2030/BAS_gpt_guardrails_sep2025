@@ -5,3 +5,4 @@ docs/STATUS.md
 guard-writable.txt
 .pre-commit-config.yaml
 README.md
+docs/EXTRA.md
