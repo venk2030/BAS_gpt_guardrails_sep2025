@@ -78,3 +78,5 @@ Scope: <Bugfix Only | Refactor Minimal | Feature Single-file>.
 Allowed files: <list>.  
 Output: **unified diff only** (one block per file). If blocked, cite clause.  
 If memory risk, ask me to `!rehydrate`.
+
+<!-- commented by naveen -->
