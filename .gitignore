@@ -1,0 +1,12 @@
+# macOS junk
+.DS_Store
+docs/.DS_Store
+
+# large local-only folder (kept out of git)
+docs/BAS-DDT-EXIM/
+
+# optional: keep office docs local
+*.docx
+*.pdf
+*.xlsx
+*.pptx

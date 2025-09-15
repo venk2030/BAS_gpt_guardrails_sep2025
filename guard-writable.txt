@@ -2,10 +2,14 @@
 docs/CHAT_GUARDRAILS.md
 docs/project-charter.md
 docs/STATUS.md
+docs/EXTRA.md
+docs/DONE_PENDING.md
 guard-writable.txt
 .pre-commit-config.yaml
 README.md
-docs/EXTRA.md
 .github/CODEOWNERS
 .github/pull_request_template.md
 Makefile
+.gitignore
+docs/DONE_PENDING.md
+guard-writable.txt
