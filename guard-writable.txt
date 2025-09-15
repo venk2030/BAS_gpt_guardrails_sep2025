@@ -6,7 +6,7 @@ docs/EXTRA.md
 docs/DONE_PENDING.md
 guard-writable.txt
 .pre-commit-config.yaml
-
+README.md 
 .github/CODEOWNERS
 .github/pull_request_template.md
 Makefile
